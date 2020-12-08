@@ -23,7 +23,6 @@ const userSchema = new Schema({
   username: {
     type: String,
   },
-
   Address: {
     type: String,
   },
@@ -36,6 +35,9 @@ const userSchema = new Schema({
   Mobile: {
     type: String,
   },
+  ImageUrl:{
+    type:String
+  }
 });
 userSchema.pre("save", async function (next) {
   try {
