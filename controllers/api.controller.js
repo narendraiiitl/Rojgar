@@ -18,11 +18,33 @@ module.exports = {
   postUserUpdate: async (req, res, next) => {
     try {
       const { aud } = req.payload;
-      User.findById(aud, (err, result) => {
-        if (err) throw err;
-        else {
-          console.log(result);
+      console.log(aud);
+      const {
+        firstname,
+        lastname,
+        bio,
+        mobile,
+        image,
+        pin,
+        city,
+        address,
+      } = req.body;
+      const update = {
+        firstname,
+        lastname,
+        bio,
+        mobile,
+        image,
+        pin,
+        city,
+        address,
+      };
+     User.findByIdAndUpdate(aud, update, (err, result) => {
+        if (err) {
+          res.send(err);
+        } else {
           res.send(result);
+          console.log(result);
         }
       });
     } catch (error) {

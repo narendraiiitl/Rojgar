@@ -23,19 +23,28 @@ const userSchema = new Schema({
   username: {
     type: String,
   },
-  Address: {
+  firstname:{
+    type:String
+  },
+  lastname:{
+    type:String
+  },
+  bio:{
+    type:String
+  },
+  address: {
     type: String,
   },
-  City: {
+  city: {
     type: String,
   },
-  Pincode: {
+  pin: {
     type: String,
   },
-  Mobile: {
+  mobile: {
     type: String,
   },
-  ImageUrl:{
+  image:{
     type:String
   }
 });
