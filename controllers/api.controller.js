@@ -39,7 +39,7 @@ module.exports = {
         city,
         address,
       };
-     User.findByIdAndUpdate(aud, update, (err, result) => {
+      User.findByIdAndUpdate(aud, update, { new: true }, (err, result) => {
         if (err) {
           res.send(err);
         } else {
